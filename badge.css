@@ -1,0 +1,215 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+/**************LOGO*************/
+#logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+#L1 img,#L2 img{
+    width: 150px;
+}
+/**************Forum de vérification*************/
+#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 100%;
+    background-color: #17A2BB;
+    margin-top:20px;
+    padding: 30px;
+    border-radius: 20px;
+}
+label{
+    padding-bottom: 20px;
+    font-weight: 499;
+    text-align: center;
+    font-size: 1.4em;
+}
+section{
+    background-color: #fff;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:auto;
+    border-radius: 6px;
+    box-shadow: 0 0 25px rgba(0,0,0,0,5);
+}
+#QR,#btn,#imprimer{
+    width: 308px;
+    font-size: 1.7em;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 26px;
+    border-radius: 10px;
+}
+#btn{
+    background-color:#555;
+    color: #fff;
+}
+#remarque{
+    width: 80%;
+    display: block;
+    font-size:2em;
+    font-weight: 399;
+    color: red;
+    padding: 10px;
+}
+ /*************Badge**************/
+ td{
+    text-align: center;
+}
+img{
+    width: 150px;
+    height: 80px;
+}
+#elements{
+    display:flex;
+    justify-content: space-evenly;
+}
+#ligne{
+    height: 1px;
+    width: 75%;
+    margin: -3px auto;
+    background-color: #FFFAE1;
+    box-shadow: 1px 3px 2px black;
+}
+#badge{
+    display: none;
+    width: 500px;
+    background-color: bisque;
+    padding: 10px;
+    margin: 10px;
+}
+h3{
+    font-size:medium
+}
+#b_btn{
+    display: block;
+}
+#imprimer{
+    margin: auto;
+}
+#badge_btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+table{
+    margin: auto;
+}
+/*
+@media(max-width: 500px){
+    #badge{
+        width: auto;
+        margin: auto;
+    }
+    img{
+        width: 100px;
+        height: 65px;
+    }
+    #remarque{
+        font-size:1.5em;
+    }
+
+}*/
+
+
+   /* Styles pour les écrans plus larges que 576px */
+   @media (max-width: 576px) {
+    #badge{
+        width: auto;
+        margin: auto;
+    }
+    img{
+        width: 100px;
+        height: 65px;
+    }
+    #remarque{
+        font-size:1.5em;
+    }
+   }
+
+
+
+
+/*/////////////////////////////////////*/
+
+/*#Image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 500px;
+    background-color: #17A2BB;
+    margin-top: 40px;
+}
+
+#Image label{
+    padding-bottom: 20px;
+    font-weight: 499;
+    text-align: center;
+    font-size: 1.4em;
+}
+select{
+    width: 308px;
+    font-size: 1.7em;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 26px;
+}
+#btnImg,#btn{
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+}
+.qr_code{
+    padding: 5px;
+    width: fit-content;
+}
+
+#badge{
+    width: 500px;
+    height: 880px;
+    background-color:beige;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-shadow:10px #000;
+}
+
+.element{
+    margin: 5px;
+    font-size:1.8em;
+    font-weight: 399;
+    color: blue;
+    text-shadow:5px #fff;
+}
+#Image{
+    display: none;
+}
+img{
+   margin-bottom: 20px;
+}*/
+#imprimer{
+    display: none;
+    color: #fff;
+    background-color: #000;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+}
