@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/**************LOGO*************/
+
+#logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  #L1, #L2 {
+    width: 40%;
+    text-align: center;
+  }
+  
+  #L1 img, #L2 img {
+    max-width: 100%;
+  }
+  
+/**************Forum de vérification*************/
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  
+  input[type="submit"] {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #0000EE;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid lightblue;
+    cursor: pointer;
+  }
+  #remarque {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+  }
+  
+ /*************Badge**************/
+ #txt {
+    text-align: center;
+    font-family: sans-serif;
+    color: #333;
+  }
+  
+  .element {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+img{
+    width: 150px;
+    height: 80px;
+}
+#elements{
+    display:flex;
+    justify-content: space-evenly;
+}
+#ligne{
+    height: 1px;
+    width: 75%;
+    margin: -3px auto;
+    background-color: #FFFAE1;
+    box-shadow: 1px 3px 2px black;
+}
+#badge{
+    max-width: 500px;
+    display:none;
+    background-color: bisque;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  @media(max-width: 500px) {
+    #badge{
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+    }
+    th, td {
+      width: 100%;
+      padding: 0;
+    }
+    table{
+        max-width: 100%;
+        margin: 0;
+    }
+    .element{
+        font-size: 1em;
+    }
+  }
+  @media(max-width: 400px) {
+  .element{
+    font-size: 0.7em;
+  }
+  }
+  
+/*/////////////////////////////////////*/
+#imprimer{
+    display: none;
+    color: #fff;
+    background-color: #000;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+    
+    <section>
+        <div id="logo">
+            <div id="L1"><img src="./images/uca.png" alt=""></div>
+            <div id="L2"><img src="./images/uca.png" alt=""></div>
+        </div>
+        <!-- entrer CNE-->
+        <div id="form">
+            <form>
+                <label for="QR" > Entrer Votre CNE : </label><br>
+                <input type="text" class="qr_text" id="QR" name="qr_text" > <br><br>
+            </form><br>
+            <input name="btnValide"id="btn"  type="submit"value="Vérifier"onclick="generateur()">
+        </div>
+        
+    </section>
+    <div id="remarque"></div>
+    <div id="badge_btn">
+        <div id="b_btn">
+            <div id="badge">
+        
+                <img src="./images/uca.png" alt="">
+                <div id="ligne"></div><br><br>
+                <div id="elements">
+                    <div id="txt">
+                       <h3><span id="faculte" class="element"></span></h3><br>
+                        <h3><span id="cne"class="element"></span></h3><br>
+                        <h3><span id="id"class="element"></span></h3><br>
+                        <h3><span id="nom"class="element"></span></h3><br>
+                        <h3><span id="prenom"class="element"></span></h3><br>
+                    </div>
+                    <div class="qr_code"></div>
+                </div><br>
+                
+                <table border="2"cellpadding=10 cellspacing=3 >
+                    <caption><h2>بطاقة الصائم</h2></caption>
+                    
+                    <tr>
+                        <th> Lun </th>
+                        <th> Mar </th>
+                        <th> Mer </th>
+                        <th> Jeu </th>
+                        <th> Ven </th>
+                        <th> Sam </th>
+                        <th> Dim </th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>22/03 <br><input type="checkbox"></td>
+                        <td>23/03 <br><input type="checkbox"></td>
+                        <td>24/03 <br><input type="checkbox"></td>
+                        <td>25/03 <br><input type="checkbox"></td>
+                        <td>26/03 <br><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>27/03 <br><input type="checkbox"></td>
+                        <td>28/03 <br><input type="checkbox"></td>
+                        <td>29/03 <br><input type="checkbox"></td>
+                        <td>30/03 <br><input type="checkbox"></td>
+                        <td>31/03 <br><input type="checkbox"></td>
+                        <td>01/04 <br><input type="checkbox"></td>
+                        <td>02/04 <br><input type="checkbox"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>03/04 <br><input type="checkbox"></td>
+                        <td>04/04 <br><input type="checkbox"></td>
+                        <td>05/04 <br><input type="checkbox"></td>
+                        <td>06/04 <br><input type="checkbox"></td>
+                        <td>07/04 <br><input type="checkbox"></td>
+                        <td>08/04 <br><input type="checkbox"></td>
+                        <td>09/04 <br><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>10/04 <br><input type="checkbox"></td>
+                        <td>11/04 <br><input type="checkbox"></td>
+                        <td>12/04 <br><input type="checkbox"></td>
+                        <td>13/04 <br><input type="checkbox"></td>
+                        <td>14/04 <br><input type="checkbox"></td>
+                        <td>15/04 <br><input type="checkbox"></td>
+                        <td>16/04 <br><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>17/04 <br><input type="checkbox"></td>
+                        <td>18/03 <br><input type="checkbox"></td>
+                        <td>19/03 <br><input type="checkbox"></td>
+                    </tr>
+                </table>
+            </div>
+            <input type="button" value="télécharger"id="imprimer"onclick="imprimer()">
+        </div>
+        </div> 
+
+        <script type="text/javascript">
+        //les variables
+        const qr_text =document.getElementById("QR");
+        const form=document.querySelector("#form");
+        const remarque=document.getElementById("remarque");
+        const qrcode=document.querySelector(".qr_code");
+        const badge=document.getElementById("badge");
+        const cne=document.getElementById("cne");
+        const id=document.getElementById("id");
+        const nom=document.getElementById("nom");
+        const prenom=document.getElementById("prenom");
+        const faculte=document.getElementById("faculte");
+        const imprime=document.getElementById("imprimer");
+        const logo=document.getElementById("logo");
+        //fonction generateur
+        function generateur(){
+            if(qr_text.value ){
+                badge.style.display="block";
+                faculte.innerHTML="<b>Faculté : </b> FSSM";
+                cne.innerHTML="<b>CNE : </b> G143048027";
+                nom.innerHTML="<b>Nom : </b> nachat";
+                prenom.innerHTML="<b>Prénom : </b> Khbit";
+                id.innerHTML="<b>Numéro : </b> 23";
+                qrcode.innerHTML=""//initialiser le contenu de qr code
+                new QRCode(qrcode,qr_text.value.toUpperCase());/*qr_text.value*/
+               form.style.display="none";
+                imprime.style.display="block";
+                remarque.innerHTML="S'il vous plait télécharger et imprimer votre  badge  ";
+            }else{
+                if(!qr_text.value){
+                    remarque.innerHTML="Entrer votre CNE avant de cliquer sur le button <i><b>'Vérifier'</b></i>";
+                }
+               
+        }
+    }
+        var stockCNE="",stockNOM="",stockPRENOM="",stockFACULTE="",stockId="";
+       
+        //imprimer
+        function imprimer(){
+            imprime.style.display="none";
+            remarque.style.display="none";
+            logo.style.display="none";
+            print();
+        }
+    </script>
+    <script src="qrcode.min.js"></script>
+    
+</body>
+</html>
+</body>
+</html>
